@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">KKS-Mein Plan</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="switch_title">Auto Login</string>
+    <string name="switch2_title">Benachrichtigungen</string>
+    <string name="auto_login">Auto Login</string>
+    <string name="benachrichtigungen">Benachrichtigungen</string>
+    <string name="ags">AGs</string>
+    <string name="ank_ndigungen">Ankündigungen</string>
+    <string name="stundenplan">Stundenplan</string>
+    <string name="vertretungsplan">Vertretungsplan</string>
+    <string name="konto">Konto</string>
+    <string name="logout">Logout</string>
+    <string name="einstellungen">Einstellungen</string>
+
+
+</resources>
