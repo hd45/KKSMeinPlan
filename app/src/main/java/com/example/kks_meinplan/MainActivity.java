@@ -8,7 +8,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -21,11 +20,10 @@ import com.StundenplanFragment;
 import com.VertretungsplanFragment;
 import com.google.android.material.navigation.NavigationView;
 
-import java.util.prefs.Preferences;
-
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
     private SwitchCompat switch1, switch2;
+    MenuItem nav_logout;
 
 
     @Override
@@ -38,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch2 = findViewById(R.id.switch2);
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigatonView = findViewById(R.id.nav_view);
+        nav_logout = findViewById(R.id.nav_logout);
 
         setSupportActionBar(toolbar);
 
@@ -105,6 +104,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         });
+
+        nav_logout.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                return false;
+            }
+        });
+
     }
 
 
@@ -148,4 +155,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             super.onBackPressed();
         }
     }
+
+    //todo logout Anzeige ob man scih wirklich abmelden will
+    //todo willst du die App wirklich verlassen
 }
