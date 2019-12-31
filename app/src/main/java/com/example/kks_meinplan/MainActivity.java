@@ -3,10 +3,12 @@ package com.example.kks_meinplan;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -19,6 +21,13 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
+    private SwitchCompat switch1, switch2;
+
+    public static final String SWITCH1 = "switch1";
+    public static final String SWITCH2 = "switch2";
+    private boolean switchOnOff;
+    private boolean switchOnOff2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +51,37 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     new VertretungsplanFragment()).commit();
             navigatonView.setCheckedItem(R.id.nav_vertretungsplan);
         }
+
+        loadstate1();
+        loadstate2();
+        savestate1();
+        savestate2();
+
+    }
+
+    private void loadstate1() {
+        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+        switchOnOff = preferences.getBoolean(SWITCH1, true);
+
+    }
+
+    private void loadstate2() {
+        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+        switchOnOff2 = preferences.getBoolean(SWITCH2, true);
+    }
+
+    private void savestate1() {
+        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean(SWITCH1, switch1.isChecked());
+        editor.apply();
+    }
+
+    private void savestate2() {
+        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean(SWITCH2, switch2.isChecked());
+        editor.apply();
     }
 
     @Override
