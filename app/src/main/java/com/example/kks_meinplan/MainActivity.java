@@ -8,9 +8,11 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.AGsFragment;
 import com.AnkündigungenFragment;
@@ -19,14 +21,11 @@ import com.StundenplanFragment;
 import com.VertretungsplanFragment;
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.prefs.Preferences;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
     private SwitchCompat switch1, switch2;
-
-    public static final String SWITCH1 = "switch1";
-    public static final String SWITCH2 = "switch2";
-    private boolean switchOnOff;
-    private boolean switchOnOff2;
 
 
     @Override
@@ -35,10 +34,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
+        switch1 = findViewById(R.id.switch1);
+        switch2 = findViewById(R.id.switch2);
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigatonView = findViewById(R.id.nav_view);
+
+        setSupportActionBar(toolbar);
+
         navigatonView.setNavigationItemSelectedListener(this);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
@@ -52,37 +54,59 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             navigatonView.setCheckedItem(R.id.nav_vertretungsplan);
         }
 
-        loadstate1();
-        loadstate2();
-        savestate1();
-        savestate2();
 
+        SharedPreferences preferences = getSharedPreferences("save", MODE_PRIVATE);
+        switch1.setChecked(preferences.getBoolean("value", true));
+
+
+        switch1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (switch1.isChecked()) {
+
+                    SharedPreferences.Editor editor = getSharedPreferences("save",
+                            MODE_PRIVATE).edit();
+                    editor.putBoolean("value", true);
+                    editor.apply();
+                    switch1.setChecked(true);
+                } else {
+                    SharedPreferences.Editor editor = getSharedPreferences("save",
+                            MODE_PRIVATE).edit();
+                    editor.putBoolean("value", false);
+                    editor.apply();
+                    switch1.setChecked(false);
+                }
+            }
+
+
+        });
+
+        SharedPreferences preferences2 = getSharedPreferences("save2", MODE_PRIVATE);
+        switch2.setChecked(preferences2.getBoolean("value2", true));
+
+        switch2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (switch2.isChecked()) {
+
+                    SharedPreferences.Editor editor = getSharedPreferences("save2",
+                            MODE_PRIVATE).edit();
+                    editor.putBoolean("value2", true);
+                    editor.apply();
+                    switch2.setChecked(true);
+                } else {
+                    SharedPreferences.Editor editor = getSharedPreferences("save2",
+                            MODE_PRIVATE).edit();
+                    editor.putBoolean("value2", false);
+                    editor.apply();
+                    switch2.setChecked(false);
+                }
+            }
+
+
+        });
     }
 
-    private void loadstate1() {
-        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
-        switchOnOff = preferences.getBoolean(SWITCH1, true);
-
-    }
-
-    private void loadstate2() {
-        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
-        switchOnOff2 = preferences.getBoolean(SWITCH2, true);
-    }
-
-    private void savestate1() {
-        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putBoolean(SWITCH1, switch1.isChecked());
-        editor.apply();
-    }
-
-    private void savestate2() {
-        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putBoolean(SWITCH2, switch2.isChecked());
-        editor.apply();
-    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
