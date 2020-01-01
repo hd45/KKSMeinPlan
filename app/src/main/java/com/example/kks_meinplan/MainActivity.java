@@ -123,6 +123,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //todo 1 logout alert dialog
         //todo 2 switches Code ist richtig
         // aber irgendwas ist falsch vllt mit OnCreate lifecycle
+        // dies ist ein Test
 
     }
 }
