@@ -4,13 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SwitchCompat;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.DialogInterface;
-import android.content.SharedPreferences;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -80,6 +79,35 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new EinstellungenFragment()).commit();
                 break;
+            case R.id.nav_logout:
+                AlertDialog.Builder alertDialogBuilder2 = new AlertDialog.Builder(this);
+                alertDialogBuilder2.setTitle("Möchtest du dich abmelden?");
+                alertDialogBuilder2
+                        .setCancelable(false)
+                        .setPositiveButton("Abmelden",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        moveTaskToBack(true);
+                                        android.os.Process.killProcess(android.os.Process.myPid());
+                                        System.exit(1);
+                                    }//todo nachm Klicken auf "Abmelden" soll man auf die Anmelde-
+                                    //activity landen. Lg fragen, ob es so geht oder ob man
+                                    //button ids braucht.
+                                    // https://stackoverflow.com/questions/5070618/how-to-start-an
+                                    // -activity-from-a-dialog-in-android
+                                })
+
+                        .setNegativeButton("Angemeldet bleiben",
+                                new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+
+                                dialog.cancel();
+                            }
+                        });
+
+                AlertDialog alertDialog = alertDialogBuilder2.create();
+                alertDialog.show();
+                break;
         }
 
         drawer.closeDrawer(GravityCompat.START);
@@ -95,11 +123,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         } else {
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-            alertDialogBuilder.setTitle("Exit Application?");
+            alertDialogBuilder.setTitle("Möchtest du die App verlassen?");
             alertDialogBuilder
-                    .setMessage("Click yes to exit!")
+                    .setMessage("App verlassen")
                     .setCancelable(false)
-                    .setPositiveButton("Yes",
+                    .setPositiveButton("Ja",
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     moveTaskToBack(true);
@@ -108,7 +136,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 }
                             })
 
-                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    .setNegativeButton("Nein", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
 
                             dialog.cancel();
@@ -123,7 +151,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //todo 1 logout alert dialog
         //todo 2 switches Code ist richtig
         // aber irgendwas ist falsch vllt mit OnCreate lifecycle
-        // dies ist ein Test
 
     }
 }

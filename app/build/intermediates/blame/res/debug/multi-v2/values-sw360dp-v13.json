@@ -4,13 +4,13 @@
             "outputFile": "C:\\Users\\Hadi Almokdad\\AndroidStudioProjects\\KKSMeinPlan\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw360dp-v13\\values-sw360dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Hadi Almokdad\\.gradle\\caches\\transforms-2\\files-2.1\\7823df204df37cc48746d7b52d595809\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",
+                    "source": "C:\\Users\\Hadi Almokdad\\.gradle\\caches\\transforms-2\\files-2.1\\da6ec4221df9916f06a54424a2b9ceb0\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "71",
-                        "endOffsets": "122"
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,127",
+                        "endColumns": "71,64",
+                        "endOffsets": "122,187"
                     }
                 }
             ]
