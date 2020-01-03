@@ -81,8 +81,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_logout:
                 AlertDialog.Builder alertDialogBuilder2 = new AlertDialog.Builder(this);
-                alertDialogBuilder2.setTitle("Möchtest du dich abmelden?");
+                alertDialogBuilder2.setTitle("Logout");
                 alertDialogBuilder2
+                        .setMessage("Möchtest du dich abmelden?")
                         .setCancelable(false)
                         .setPositiveButton("Abmelden",
                                 new DialogInterface.OnClickListener() {

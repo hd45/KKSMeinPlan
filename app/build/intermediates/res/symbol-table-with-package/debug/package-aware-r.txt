@@ -720,6 +720,7 @@ color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color ic_launcher_background
+color login_buttons
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1122,6 +1123,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_stundenplan
 drawable ic_vertretungsplan
+drawable kkslogo
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1202,6 +1204,7 @@ id add
 id alertTitle
 id all
 id always
+id anmelden
 id async
 id auto
 id barrier
@@ -1307,6 +1310,7 @@ id pin
 id progress_circular
 id progress_horizontal
 id radio
+id rectangle_2
 id recycler_view
 id right
 id right_icon
@@ -1540,6 +1544,7 @@ string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string ags
 string ank_ndigungen
+string anmlden
 string app_name
 string appbar_scrolling_view_behavior
 string auto_login
@@ -1562,6 +1567,7 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string registrieren
 string search_menu_title
 string status_bar_notification_info_overflow
 string stundenplan
