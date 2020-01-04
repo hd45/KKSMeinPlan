@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".anmelden_activity"
-    android:background="@color/colorPrimary"
+    android:background="@color/colorPrimaryDark"
     android:orientation="vertical">
 
 
@@ -17,24 +17,28 @@
     <Button
         android:id="@+id/anmelden"
         android:layout_width="231dp"
-        android:layout_height="43dp"
+        android:layout_height="50dp"
         android:layout_marginTop="85dp"
         android:layout_gravity="center"
-        android:background="@color/login_buttons"
-        android:text="@string/anmlden"
+        android:background="@drawable/buttons"
+        android:text="@string/Anmelden"
+        android:textSize="16sp"
+        android:textAllCaps="false"
         android:gravity="center"
         tools:layout_editor_absoluteX="90dp"
         tools:layout_editor_absoluteY="538dp" />
 
 
     <Button
-        android:id="@+id/rectangle_2"
+        android:id="@+id/registrieren"
         android:layout_width="231dp"
-        android:layout_height="43dp"
+        android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
-        android:background="@color/login_buttons"
-        android:text="@string/registrieren"
+        android:background="@drawable/buttons"
+        android:text="@string/Registrieren"
+        android:textSize="16sp"
+        android:textAllCaps="false"
         android:gravity="center"
         tools:layout_editor_absoluteX="90dp"
         tools:layout_editor_absoluteY="605dp" />

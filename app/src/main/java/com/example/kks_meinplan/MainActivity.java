@@ -9,10 +9,8 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.AGsFragment;
 import com.AnkündigungenFragment;
@@ -124,9 +122,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         } else {
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-            alertDialogBuilder.setTitle("Möchtest du die App verlassen?");
+            alertDialogBuilder.setTitle("App verlassen");
             alertDialogBuilder
-                    .setMessage("App verlassen")
+                    .setMessage("Möchtest du die App verlassen?")
                     .setCancelable(false)
                     .setPositiveButton("Ja",
                             new DialogInterface.OnClickListener() {

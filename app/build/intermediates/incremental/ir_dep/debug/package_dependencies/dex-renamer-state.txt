@@ -1,4 +1,4 @@
-#Fri Jan 03 18:48:29 CET 2020
-base.0=C\:\\Users\\Hadi Almokdad\\Desktop\\project\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\10
+#Sat Jan 04 15:54:45 CET 2020
+base.0=C\:\\Users\\Hadi Almokdad\\AndroidStudioProjects\\KKSMeinPlan\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\10
 path.0=classes.dex
 renamed.0=classes.dex

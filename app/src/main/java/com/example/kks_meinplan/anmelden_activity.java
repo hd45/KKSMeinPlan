@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class anmelden_activity extends AppCompatActivity {
-    //todo Knöpfe-Layout verbessern eventuell auch das ganze Layout verbessern
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anmelden);

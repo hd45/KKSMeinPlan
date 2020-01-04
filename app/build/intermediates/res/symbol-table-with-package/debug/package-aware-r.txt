@@ -1105,6 +1105,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable buttons
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1115,8 +1116,6 @@ drawable ic_ags
 drawable ic_ankuendigungen
 drawable ic_arrow_down_24dp
 drawable ic_einstellungen
-drawable ic_launcher_background
-drawable ic_launcher_foreground
 drawable ic_logout
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
@@ -1256,6 +1255,8 @@ id forever
 id fragment_container
 id ghost_view
 id gone
+id group1
+id group2
 id group_divider
 id groups
 id home
@@ -1310,8 +1311,8 @@ id pin
 id progress_circular
 id progress_horizontal
 id radio
-id rectangle_2
 id recycler_view
+id registrieren
 id right
 id right_icon
 id right_side
@@ -1514,7 +1515,9 @@ layout toolbar
 menu drawer_menu
 mipmap ic_launcher
 mipmap ic_launcher_foreground
-mipmap ic_launcher_round
+mipmap ic_launcher_foreground_round
+string Anmelden
+string Registrieren
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -1544,7 +1547,6 @@ string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string ags
 string ank_ndigungen
-string anmlden
 string app_name
 string appbar_scrolling_view_behavior
 string auto_login
@@ -1567,7 +1569,6 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
-string registrieren
 string search_menu_title
 string status_bar_notification_info_overflow
 string stundenplan
